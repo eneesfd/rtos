@@ -65,8 +65,8 @@ all: main-build
 main-build: FreeRTOS_Ders.elf secondary-outputs
 
 # Tool invocations
-FreeRTOS_Ders.elf FreeRTOS_Ders.map: $(OBJS) $(USER_OBJS) C:\DevBuilds\FreeRTOS_Ders\STM32H750XBHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "FreeRTOS_Ders.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\DevBuilds\FreeRTOS_Ders\STM32H750XBHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FreeRTOS_Ders.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+FreeRTOS_Ders.elf FreeRTOS_Ders.map: $(OBJS) $(USER_OBJS) C:\dev\rtos\STM32H750XBHX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "FreeRTOS_Ders.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\dev\rtos\STM32H750XBHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="FreeRTOS_Ders.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
